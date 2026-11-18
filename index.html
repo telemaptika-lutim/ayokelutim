@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beranda | Ayo Ke Luwu Timur</title>
+  <meta name="description" content="Portal resmi pariwisata Kabupaten Luwu Timur.">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="beranda">
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html">Ayo Ke <strong>Luwu Timur</strong></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">&#9776;</button>
+      <nav class="nav">
+        <a href="index.html" data-nav="beranda">Beranda</a>
+        <a href="destinasi.html" data-nav="destinasi">Destinasi</a>
+        <a href="event.html" data-nav="event">Event</a>
+        <a href="kuliner.html" data-nav="kuliner">Kuliner</a>
+        <a href="galeri.html" data-nav="galeri">Galeri</a>
+        <a href="kontak.html" data-nav="kontak">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Ayo Ke Luwu Timur</h1>
+        <p>Jelajahi danau purba, alam hijau, budaya, dan kuliner khas Bumi Batara Guru.</p>
+        <a class="btn" href="destinasi.html">Lihat Destinasi</a>
+      </div>
+    </section>
+
+    <section class="container section">
+      <h2>Destinasi Unggulan</h2>
+      <div class="grid" data-source="destinasi" data-limit="3"></div>
+    </section>
+
+    <section class="container section">
+      <h2>Event Terdekat</h2>
+      <div class="grid" data-source="event" data-limit="3"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="tahun"></span> Diskominfo-SP Kabupaten Luwu Timur. Portal Pariwisata "Ayo Ke Luwu Timur".</p>
+    </div>
+  </footer>
+  <script src="data/konten.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
