@@ -28,8 +28,35 @@ h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
 .nav-toggle { display: none; background: none; border: 0; color: var(--putih); font-size: 1.6rem; cursor: pointer; }
 
 /* Hero */
-.hero { background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35)), url("../img/placeholder.svg") center/cover; color: var(--putih); padding: 120px 0; text-align: center; }
-.hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); }
+/* Hero: foto layar penuh (issue #2)
+   - Foto utama: assets/img/hero.jpg
+   - Jika hero.jpg belum ada, otomatis memakai placeholder.svg
+   - Lapisan gelap (rgba) agar judul & tombol tetap terbaca */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 60px);   /* 60px = tinggi menu atas */
+  min-height: calc(100svh - 60px);  /* versi untuk HP modern */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--putih);
+  background-color: var(--hijau-tua);
+  background-image:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("../img/hero.jpg"),
+    url("../img/placeholder.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-content { padding: 0 16px; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+.hero p { font-size: clamp(1rem, 2.2vw, 1.25rem); margin: 0 0 1.5em; text-shadow: 0 1px 8px rgba(0,0,0,.4); }
+.hero-scroll { position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%); color: var(--putih); text-decoration: none; line-height: 0; opacity: .85; animation: turun 1.8s infinite; }
+@keyframes turun { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,8px); } }
+html { scroll-behavior: smooth; }
+#unggulan { scroll-margin-top: 60px; }
 .page-hero { background: var(--hijau-tua); color: var(--putih); padding: 48px 0; }
 .btn { display: inline-block; background: var(--kuning); color: var(--teks); padding: 12px 24px; border-radius: 999px; border: 0; font-weight: 600; text-decoration: none; cursor: pointer; font-size: 1rem; }
 
@@ -61,5 +88,4 @@ h1, h2, h3 { line-height: 1.25; margin: 0 0 .5em; }
   .nav { display: none; position: absolute; top: 60px; left: 0; right: 0; background: var(--hijau); flex-direction: column; padding: 8px 16px 16px; }
   .nav.open { display: flex; }
   .two-col { grid-template-columns: 1fr; }
-  .hero { padding: 80px 0; }
 }
